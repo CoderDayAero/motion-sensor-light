@@ -13,24 +13,6 @@ A motion-detecting light using an Arduino and PIR sensor that senses motion (lik
 ## How it works
 When motion is detected, the sensor sends a signal to the Arduino, which turns on the LED. When no motion is detected after the 5 seconds it remains lit, the LED turns off.
 
-## The exact code i used
-int sensor = 7;
-int led = 13;
-
-void setup() {
-  pinMode(sensor, INPUT);
-  pinMode(led, OUTPUT);
-}
-
-void loop() {
-  if (digitalRead(sensor) == HIGH) {
-    digitalWrite(led, HIGH);
-    delay(5000); // stays on for 5 seconds
-  } else {
-    digitalWrite(led, LOW);
-  }
-}
-
 ## Problems I ran into
 - Sensor was too sensitive at first and would flicker (intially meant to turn off after about 2-3 seconds)
 - Wiring mistakes caused LED not to turn on
